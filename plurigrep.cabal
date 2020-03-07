@@ -1,0 +1,80 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: a2561cb9608221b0979a1af8d626998611361ec973f717118944e842e4b0fab9
+
+name:           plurigrep
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/multigrep#readme>
+homepage:       https://github.com/amkhlv/plurigrep#readme
+bug-reports:    https://github.com/amkhlv/plurigrep/issues
+author:         Andrei Mikhailov
+maintainer:     amkhlv@gmail.com
+copyright:      Andrei Mikhailov
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/amkhlv/plurigrep
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_plurigrep
+  hs-source-dirs:
+      src
+  build-depends:
+      ansi-terminal
+    , array
+    , base >=4.7 && <5
+    , containers
+    , optparse-applicative
+    , regex-tdfa
+    , text
+  default-language: Haskell2010
+
+executable plurigrep
+  main-is: Main.hs
+  other-modules:
+      Paths_plurigrep
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ansi-terminal
+    , array
+    , base >=4.7 && <5
+    , containers
+    , optparse-applicative
+    , plurigrep
+    , regex-tdfa
+    , text
+  default-language: Haskell2010
+
+test-suite plurigrep-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_plurigrep
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      ansi-terminal
+    , array
+    , base >=4.7 && <5
+    , containers
+    , optparse-applicative
+    , plurigrep
+    , regex-tdfa
+    , text
+  default-language: Haskell2010
