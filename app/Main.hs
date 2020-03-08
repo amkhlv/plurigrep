@@ -99,7 +99,8 @@ data CLOps = CLOps {
 }
 cloparser :: Parser CLOps
 cloparser = CLOps 
-    <$> option auto ( long "radius" <> short 'r' <> metavar "RADIUS" <> help "Radius" <> value defaultRadius)
+    <$> option auto ( 
+        long "radius" <> short 'r' <> metavar "RADIUS" <> help ("Radius (default " ++ show defaultRadius ++ ")") <> value defaultRadius)
     <*> switch (long "no-color" <> help "Turn off color highlighting")
     <*> many (argument str (metavar "REGEX..."))
 opts :: ParserInfo CLOps
