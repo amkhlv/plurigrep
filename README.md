@@ -21,3 +21,11 @@ A tool for finding groups of lines in text, where regular expressions from a giv
       -r,--radius RADIUS       Radius (default 5)
       --no-color               Turn off color highlighting
       -h,--help                Show this help text
+
+## Encoding problems
+
+Many text files are incorrectly encoded. In this case:
+
+    cat someText.txt | iconv -c | plurigrep ...
+
+(see `man iconv`)

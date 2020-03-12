@@ -106,7 +106,8 @@ cloparser = CLOps
 opts :: ParserInfo CLOps
 opts = info (cloparser <**> helper)
   ( fullDesc
-  <> progDesc "Print matching lines. The text should be sent on STDIN."
+  <> progDesc ( "Print matching lines. The text should be sent on STDIN.\n" ++
+                "Use \"iconv -c\" to correct encoding errors in the input" )
   <> header "plurigrep - find groups of neighboring lines in text on STDIN, in which matches occur for all REGEXes from a given set" )
 
 main :: IO ()
