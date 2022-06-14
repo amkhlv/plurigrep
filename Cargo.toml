@@ -1,0 +1,18 @@
+[package]
+name = "plurigrep"
+version = "0.1.0"
+authors = ["Andrei Mikhailov <amkhlv@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "plurigrep"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "3.1.17", features = ["derive"] }
+clap_complete = "3.0.5"
+regex = "1.5.6"
+ansi_term = "0.6.3"
+

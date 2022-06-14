@@ -6,21 +6,29 @@ A tool for finding groups of lines in text, where regular expressions from a giv
 
 ## Installation
 
-    stack install
+    cargo install --path .
 
---- this builds and copies the executable into `~/.local/bin/`
+--- this builds and copies the executable into `~/.cargo/bin/`
 
 ## Usage
 
-    plurigrep - find groups of neighboring lines in text, in which matches occur for all REGEXes from a given set
+    plurigrep [OPTIONS] [REGEXEN]...
 
-    Usage: cat someText.txt | plurigrep [-r|--radius RADIUS] [--no-color] [REGEX...]
-      This prints matching lines 
+    ARGS:
+        <REGEXEN>...    
+    
+    OPTIONS:
+            --completion         Generate bash completion
+            --debug              
+        -h, --help               Print help information
+        -m, --margin <MARGIN>    [default: 4]
+            --nocolor            
+            --nosep              
+        -r, --radius <RADIUS>    [default: 8]
+            --sep <SEPARATOR>    [default:
+                                 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━]
+        -V, --version            Print version information
 
-    Available options:
-      -r,--radius RADIUS       Radius (default 5)
-      --no-color               Turn off color highlighting
-      -h,--help                Show this help text
 
 ## Encoding problems
 
